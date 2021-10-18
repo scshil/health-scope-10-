@@ -1,0 +1,8 @@
+#home-background {
+  background-image: linear-gradient(to right, #b2ced4, white);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+#image {
+  border-radius: 5px;
+}
