@@ -5,15 +5,21 @@ const ServiceDetails = () => {
   const { id } = useParams();
   const [details, setDetails] = useState({});
   useEffect(() => {
-    let url = `./services.json${id}`;
-    fetch(url)
+    // let url = `./services.json`;
+    fetch("/services.json")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setDetails(data));
   }, []);
+
+  /*  useEffect(() => {
+    const selectedService = details.find((select) => select?._id === id);
+    console.log(selectedService);
+  }, [details]); */
+
   return (
     <div>
       <h2>welcome to service details {id}</h2>
-      {/* <h1>hlw {details.name}</h1> */}
+      <h1>hlw </h1>
     </div>
   );
 };

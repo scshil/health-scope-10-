@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import picture from "../../images/home-background.jpg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -13,7 +14,9 @@ const Home = () => {
         <h2>
           welcome to <span>H</span>ealth <span>S</span>COPE
         </h2>
-        <button>Appointment</button>
+        <Link to="/appoinment">
+          <button>Appointment</button>
+        </Link>
       </div>
       {/* images */}
       <img id="image" src={picture} alt="" srcset="" />

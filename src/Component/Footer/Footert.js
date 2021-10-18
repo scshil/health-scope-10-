@@ -11,8 +11,8 @@ import {
 
 const Footert = () => {
   return (
-    <div id="footer-color ">
-      <div className="d-flex justify-content-around mt-5">
+    <div className="footer-color ">
+      <div className="d-flex justify-content-around ">
         <div>
           <h3>
             <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -22,7 +22,7 @@ const Footert = () => {
           <h6>Pahartoli,Chottagong</h6>
         </div>
         <div className=" d-flex mt-5">
-          <p>copoyright &#169 HealthScope </p>
+          <p>copoyright &#169;HealthScope </p>
         </div>
         <div>
           <h3>

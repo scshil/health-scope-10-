@@ -9,6 +9,7 @@ import hospital2 from "../../images/hospital-image2.jpg";
 import hospital3 from "../../images/hospital-image3.jpg";
 // import picture from "../../images/cover-about.jpg";
 import "./About.css";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div>
@@ -89,7 +90,10 @@ const About = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View</Button>
+                <Link to="/doctors">
+                  {" "}
+                  <Button variant="primary">View</Button>
+                </Link>
               </Card.Body>
             </Card>
           </div>
@@ -102,7 +106,10 @@ const About = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View</Button>
+                <Link to="/services">
+                  {" "}
+                  <Button variant="primary">View</Button>
+                </Link>
               </Card.Body>
             </Card>
           </div>

@@ -1,0 +1,13 @@
+.appoinment-form {
+  border: 5px solid blanchedalmond;
+  box-shadow: 5px 5px 5px black;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 255, 255, 0.329),
+    rgba(100, 128, 0, 0.363)
+  );
+  border-radius: 30px;
+}
+.appoinment-bg {
+  height: 100vh;
+}
