@@ -1,6 +1,7 @@
 # Health Scope
 
 This is a Hospital Website .
+click here to visit: https://healthscope.netlify.app/login
 
 ## About HealthScope
 
