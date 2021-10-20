@@ -1,4 +1,4 @@
-import Button from "@restart/ui/esm/Button";
+import { Button } from "react-bootstrap";
 import React from "react";
 import { Card, Carousel } from "react-bootstrap";
 import doctors from "../../images/doctors.png";
@@ -77,7 +77,7 @@ const About = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">View</Button>
+                <Button>View</Button>
               </Card.Body>
             </Card>
           </div>
@@ -92,7 +92,7 @@ const About = () => {
                 </Card.Text>
                 <Link to="/doctors">
                   {" "}
-                  <Button variant="primary">View</Button>
+                  <Button>View</Button>
                 </Link>
               </Card.Body>
             </Card>
@@ -108,7 +108,7 @@ const About = () => {
                 </Card.Text>
                 <Link to="/services">
                   {" "}
-                  <Button variant="primary">View</Button>
+                  <Button>View</Button>
                 </Link>
               </Card.Body>
             </Card>

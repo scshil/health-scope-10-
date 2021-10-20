@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Appoinment.css";
 const Appoinment = () => {
   return (
@@ -55,9 +56,12 @@ const Appoinment = () => {
           </div>
 
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">
-              Done
-            </button>
+            <Link to="/done">
+              {" "}
+              <button type="submit" class="btn btn-primary">
+                Done
+              </button>
+            </Link>
           </div>
         </form>
       </div>

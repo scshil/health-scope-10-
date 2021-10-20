@@ -6,3 +6,8 @@
 #image {
   border-radius: 5px;
 }
+.text-style {
+  font-size: 40px;
+  color: orange;
+  font-weight: 900;
+}

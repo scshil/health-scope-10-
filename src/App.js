@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Component/Home/Home";
@@ -11,43 +11,55 @@ import Doctors from "./Component/Doctors/Doctors";
 import Appoinment from "./Component/Appoinment/Appoinment";
 import Login from "./Component/Login/Login";
 import Register from "./Component/Regester/Register";
+import Notfound from "./Component/404/Notfound";
+import ProcessDone from "./Component/ProcessDone/ProcessDone";
+import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route path="/services">
-            <Services></Services>
-          </Route>
-          <Route path="/service/:id">
-            <ServiceDetails></ServiceDetails>
-          </Route>
-          <Route path="/doctors">
-            <Doctors></Doctors>
-          </Route>
-          <Route path="/appoinment">
-            <Appoinment></Appoinment>
-          </Route>
-          <Route path="/loin">
-            <Login></Login>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
-        </Switch>
-        <Footert></Footert>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/about">
+              <About></About>
+            </Route>
+            <Route exact path="/services">
+              <Services></Services>
+            </Route>
+            <PrivateRoute exact path="/service/:id">
+              <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
+            <Route exact path="/doctors">
+              <Doctors></Doctors>
+            </Route>
+            <PrivateRoute path="/appoinment">
+              <Appoinment></Appoinment>
+            </PrivateRoute>
+            <Route exact path="/done">
+              <ProcessDone></ProcessDone>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
+            </Route>
+            <Route exact path="/register">
+              <Register></Register>
+            </Route>
+            <Route path="*">
+              <Notfound></Notfound>
+            </Route>
+          </Switch>
+          <Footert></Footert>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

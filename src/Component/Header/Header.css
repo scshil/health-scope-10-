@@ -5,3 +5,14 @@
   margin-right: 10px;
   color: whitesmoke;
 }
+.text-style1 {
+  font-size: 20px;
+  color: orange;
+  font-weight: 900;
+}
+#login {
+  color: greenyellow;
+}
+#logout {
+  color: red;
+}

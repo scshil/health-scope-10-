@@ -3,16 +3,21 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-// import { Link } from "react-router-dom";
+import { faSignInAlt, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+
+import useAuth from "../../Hook/useAuth";
+// import useFirebase from "../../Hook/useFirebase";
 
 const Header = () => {
+  const { logOut, user } = useAuth();
+  // const { logOut, user } = useFirebase();
   return (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>
-            <span>H</span>ealth<span>S</span>cope
+            <span className="text-style1">H</span>ealth
+            <span className="text-style1">S</span>cope
           </Navbar.Brand>
           <Nav className="me-auto ">
             <NavLink
@@ -67,11 +72,29 @@ const Header = () => {
             </NavLink>
           </Nav>
           <div>
-            <NavLink to="/loin">
-              <Button variant="secondary">
-                <FontAwesomeIcon icon={faSignInAlt} /> &nbsp; Login
+            {user.email && (
+              <span>
+                <strong style={{ color: "orange" }}>
+                  {" "}
+                  Hlw! {user?.displayName}
+                </strong>
+              </span>
+            )}
+            &nbsp;
+            {user.email ? (
+              <Button id="logout" onClick={logOut} variant="secondary">
+                {" "}
+                <FontAwesomeIcon icon={faSignOutAlt} /> &nbsp;{" "}
+                <span>logout</span>
               </Button>
-            </NavLink>
+            ) : (
+              <NavLink to="/login">
+                <Button id="login" variant="secondary">
+                  <FontAwesomeIcon icon={faSignInAlt} /> &nbsp;{" "}
+                  <span>Login</span>
+                </Button>
+              </NavLink>
+            )}
           </div>
         </Container>
       </Navbar>

@@ -5,7 +5,13 @@ import gmail from "../../images/gamil.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import useAuth from "../../Hook/useAuth";
+// import useFirebase from "../../Hook/useFirebase";
 const Login = () => {
+  const { signInWithGoogle, loginBtn, user, email } = useAuth();
+  // const { signInWithGoogle } = useFirebase();
+
   return (
     <div className="login-page">
       <div>
@@ -16,7 +22,8 @@ const Login = () => {
         <hr />
         <div className="container">
           <h5>Email</h5>
-          <FontAwesomeIcon icon={faEnvelope} /> &nbsp; &nbsp;
+          <FontAwesomeIcon icon={faEnvelope} />
+          &nbsp;
           <input
             className="input-fild"
             type="email"
@@ -33,11 +40,15 @@ const Login = () => {
             id=""
             placeholder="Enter password"
           />
+          <br />
+          <Button onClick={loginBtn} className="mt-2">
+            Login
+          </Button>
           {/* more way to login */}
           <div className="mt-5">
             <h6> Or Login with</h6>
             <div className="">
-              <button>
+              <button onClick={signInWithGoogle}>
                 {" "}
                 <img height="20px " src={gmail} alt="" srcset="" />
               </button>
@@ -46,7 +57,7 @@ const Login = () => {
           {/* sign up */}
           <div className="mt-5">
             <h6>
-              New user? <Link>Sign-up</Link>
+              New user? <Link to="/register">Sign-up</Link>
             </h6>
           </div>
         </div>

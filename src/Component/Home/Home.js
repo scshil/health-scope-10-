@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import picture from "../../images/home-background.jpg";
 import { Link } from "react-router-dom";
-
+import { Button } from "react-bootstrap";
 const Home = () => {
   return (
     <div
@@ -12,10 +12,11 @@ const Home = () => {
       {/* text */}
       <div>
         <h2>
-          welcome to <span>H</span>ealth <span>S</span>COPE
+          welcome to <span className="text-style">H</span>ealth{" "}
+          <span className="text-style">S</span>COPE
         </h2>
         <Link to="/appoinment">
-          <button>Appointment</button>
+          <Button>Appoinment</Button>
         </Link>
       </div>
       {/* images */}
